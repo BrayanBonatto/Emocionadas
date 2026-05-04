@@ -1,0 +1,322 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap');
+
+  .emo-wrap {
+    font-family: 'Nunito', sans-serif;
+    padding: 2rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .emo-header { text-align: center; margin-bottom: 1.5rem; }
+
+  .emo-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #eb6625;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .emo-tagline {
+    font-size: 13px;
+    color: #a0918a;
+    margin: 4px 0 0;
+    letter-spacing: 0.5px;
+  }
+
+  .incluido-box {
+    background: #fff8f4;
+    border: 1.5px solid #f2d5c4;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .incluido-titulo {
+    font-size: 11px;
+    font-weight: 700;
+    color: #eb6625;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+
+  .incluido-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+
+  .incluido-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: #4a3c36;
+    line-height: 1.4;
+  }
+
+  .icon-box {
+    min-width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #eb6625;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 1px;
+  }
+
+  .incluido-item span { padding-top: 4px; }
+
+  .emo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 1.25rem;
+  }
+
+  .plan-card {
+    background: #faf7f5;
+    border: 1.5px solid #e8dfd8;
+    border-radius: 16px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .plan-card:hover { transform: translateY(-3px); }
+
+  .plan-card.destaque {
+    background: #fff;
+    border: 2px solid #eb6625;
+    box-shadow: 0 0 0 4px rgba(235,102,37,0.08);
+  }
+
+  .badge-popular {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #eb6625;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+
+  .plan-nome {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #3a2e2a;
+    margin: 0 0 4px;
+  }
+
+  .plan-preco-bloco { margin: 10px 0; }
+
+  .plan-de {
+    font-size: 11px;
+    color: #b0a09a;
+    text-decoration: line-through;
+    display: block;
+    height: 16px;
+  }
+
+  .plan-valor {
+    font-size: 28px;
+    font-weight: 700;
+    color: #eb6625;
+    line-height: 1.1;
+  }
+
+  .plan-valor sup {
+    font-size: 13px;
+    vertical-align: super;
+    font-weight: 600;
+  }
+
+  .plan-ciclo {
+    font-size: 11px;
+    color: #a0918a;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .plan-economia {
+    display: inline-block;
+    background: rgba(235,102,37,0.10);
+    color: #eb6625;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 5px 0;
+  }
+
+  .plan-economia.hidden { visibility: hidden; }
+
+  .plan-divider {
+    border: none;
+    border-top: 1px solid #e8dfd8;
+    margin: 10px 0;
+  }
+
+  .bonus-tag {
+    background: #fff3ec;
+    border: 1px solid #f2d5c4;
+    border-radius: 10px;
+    padding: 7px 10px;
+    font-size: 11.5px;
+    color: #8a4a25;
+    line-height: 1.4;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .bonus-tag strong {
+    color: #eb6625;
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .btn-assinar {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 0;
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: opacity 0.15s;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  .btn-assinar:hover { opacity: 0.85; }
+
+  .btn-primary {
+    background: #eb6625;
+    color: #fff;
+    border: none;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #eb6625;
+    border: 1.5px solid #eb6625;
+  }
+
+  .emo-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #b0a09a;
+    margin-top: 1rem;
+    line-height: 1.8;
+  }
+</style>
+
+<div class="emo-wrap">
+  <div class="emo-header">
+    <p class="emo-logo">Emocionadas</p>
+    <p class="emo-tagline">Comunidade de inteligência emocional para mulheres</p>
+  </div>
+
+  <div class="incluido-box">
+    <p class="incluido-titulo">Incluído em todos os planos</p>
+    <div class="incluido-grid">
+      <div class="incluido-item">
+        <div class="icon-box">🏡</div>
+        <span>Acesso completo à comunidade</span>
+      </div>
+      <div class="incluido-item">
+        <div class="icon-box">🎥</div>
+        <span>Aula ao vivo mensal com a mentora</span>
+      </div>
+      <div class="incluido-item">
+        <div class="icon-box">📚</div>
+        <span>Biblioteca de aulas gravadas</span>
+      </div>
+      <div class="incluido-item">
+        <div class="icon-box">💬</div>
+        <span>Acesso direto à mentora pelo grupo</span>
+      </div>
+      <div class="incluido-item">
+        <div class="icon-box">🌿</div>
+        <span>Ações diárias de inteligência emocional</span>
+      </div>
+      <div class="incluido-item">
+        <div class="icon-box">✨</div>
+        <span>Práticas para uma vida mais leve</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="emo-grid">
+
+    <div class="plan-card">
+      <p class="plan-nome">Mensal</p>
+      <div class="plan-preco-bloco">
+        <span class="plan-de"> </span>
+        <span class="plan-valor"><sup>R$</sup>39<sup>,90</sup></span>
+        <span class="plan-ciclo">por mês</span>
+      </div>
+      <span class="plan-economia hidden">—</span>
+      <hr class="plan-divider">
+      <a href="https://invoice.infinitepay.io/plans/kamilabonatto/UA8VRcOxj" class="btn-assinar btn-secondary">Começar agora</a>
+    </div>
+
+    <div class="plan-card destaque">
+      <span class="badge-popular">Mais escolhido</span>
+      <p class="plan-nome">Semestral</p>
+      <div class="plan-preco-bloco">
+        <span class="plan-de">R$ 239,40</span>
+        <span class="plan-valor"><sup>R$</sup>197</span>
+        <span class="plan-ciclo">a cada 6 meses</span>
+      </div>
+      <span class="plan-economia">Economia de R$ 42,40</span>
+      <hr class="plan-divider">
+      <div class="bonus-tag">
+        <strong>Bônus após 6 meses</strong>
+        Sessão individual gratuita de 45 min com a mentora 🧡
+      </div>
+      <a href="https://invoice.infinitepay.io/plans/kamilabonatto/24pZMNbV" class="btn-assinar btn-primary">Quero esse plano</a>
+    </div>
+
+    <div class="plan-card">
+      <p class="plan-nome">Anual</p>
+      <div class="plan-preco-bloco">
+        <span class="plan-de">R$ 478,80</span>
+        <span class="plan-valor"><sup>R$</sup>297</span>
+        <span class="plan-ciclo">por ano</span>
+      </div>
+      <span class="plan-economia">Economia de R$ 181,80</span>
+      <hr class="plan-divider">
+      <div class="bonus-tag">
+        <strong>Bônus garantido no 1º ano</strong>
+        Sessão individual gratuita de 1h30 com a mentora 🧡
+      </div>
+      <a href="https://invoice.infinitepay.io/plans/kamilabonatto/7mcEeXqKdv" class="btn-assinar btn-secondary">Quero o anual</a>
+    </div>
+
+  </div>
+
+  <div class="emo-footer">
+    Pagamento seguro &nbsp;·&nbsp; Acesso imediato após a confirmação<br>
+    Dúvidas? Fala com a gente 🧡
+  </div>
+</div>
